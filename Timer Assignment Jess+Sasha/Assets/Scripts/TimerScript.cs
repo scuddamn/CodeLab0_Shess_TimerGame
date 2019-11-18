@@ -28,4 +28,8 @@ public class TimerScript : MonoBehaviour
         timerTextComp.text = "Time: " + timer; 
     }
 
+    public void StopTimer()
+    {
+        CancelInvoke();
+    }
 }
