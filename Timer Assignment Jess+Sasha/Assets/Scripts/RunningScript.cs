@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RunningScript : MonoBehaviour
 {
+    // set up speed var and obj-specific movement 
     public float speed; 
     public KeyCode Forward;
     public KeyCode Back;
@@ -24,25 +25,26 @@ public class RunningScript : MonoBehaviour
 
         if (Input.GetKey(Forward))
         {
-            movement.z += speed;
+            movement.x -= speed; //orientation is strange, but this does successfully move the player obj forward
         }
 
         if (Input.GetKey(Back))
         {
-            movement.z -= speed;
+            movement.x += speed; //move player obj backwards along x axis
         }
 
         if (Input.GetKey(Left))
         {
-            movement.x -= speed;
+            movement.z -= speed; //move player obj left along z axis
         }
 
         if (Input.GetKey(Right))
         {
-            movement.x += speed;
+            movement.z += speed; //move player obj right along z axis
         }
 
 
+        //move player obj according to key input
         Vector3 newPosition = transform.position;
 
         newPosition += movement;
