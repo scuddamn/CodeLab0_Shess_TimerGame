@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FinishLineTriggerScript : MonoBehaviour
 {
+    public TimerScript timerScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,10 @@ public class FinishLineTriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+           timerScript.CancelInvoke();
+        }
+       
     }
 }
