@@ -20,6 +20,7 @@ public class FinishLineTriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //stop timer once finish line is hit
         if (other.CompareTag("Player"))
         {
            timerScript.CancelInvoke();
